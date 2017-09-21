@@ -1,0 +1,18 @@
+
+<%if @failed == true%>
+  <h3>Login failed. Please try again:</h3>
+<%else%>
+  <h2>Log into your account!</h2>
+<%end%>
+
+<form action='/login' method='post'>
+
+  <h3>Username:</h3>
+    <input type='text' name='username'>
+  <h3>Password:</h3>
+    <input type='text' name='password'>
+
+  <br></br>
+  <button type=submit>submit</button>
+
+</form>
