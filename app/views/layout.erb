@@ -6,6 +6,14 @@
   </head>
   <body>
 
+    <%if session[:user_id]%>
+      <%@user=User.find(session[:user_id])%>
+      <h1>Welcome, <%=@user.username%></h1>
+      <h3>Would you like to <a href="/tweets/new">create your own Tweet?</a></h3>
+      <h3><a href="/logout">Logout</a></h3>
+    <%end%>
+    <br></br>
+
     <%=yield%>
 
   </body>

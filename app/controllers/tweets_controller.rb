@@ -2,11 +2,10 @@ class TweetsController < ApplicationController
 
   get '/tweets' do
     if session[:user_id]
-      @user = User.find(session[:user_id])
+      erb :'tweets/index'
     else
       redirect to '/login'
     end
-    erb :'tweets/index'
   end
 
   get '/tweets/new' do
@@ -71,9 +70,8 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     if session[:user_id] == @tweet.user.id
       @tweet.destroy
-    else
-      redirect to '/tweets'
     end
+    redirect to '/tweets'
   end
 
 end
