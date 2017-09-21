@@ -1,0 +1,11 @@
+<%if @failed%>
+  <h3>Creation of Tweet failed. Please make sure you enter content.</h3>
+<%else%>
+  <h2>Create a new Tweet</h2>
+<%end%>
+
+<form action='/tweets/new' method="post">
+  <p>Content:</p>
+    <input type="text" name='content' required>
+  <button type="submit">submit</button>
+</form>

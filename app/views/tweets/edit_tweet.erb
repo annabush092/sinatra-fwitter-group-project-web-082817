@@ -1,0 +1,15 @@
+<%if @failed%>
+<h2>Edit failed. Please enter content.</h2>
+<%else%>
+<h3>Edit your Tweet:</h3>
+<%end%>
+
+<form action='/tweets/<%=@tweet.id%>' method='post'>
+<input id="hidden" type="hidden" name="_method" value='patch'>
+
+  <h3>Change your tweet below:</h3>
+  <input type="text" name='content' value="<%=@tweet.content%>" required>
+
+  <button type="submit">submit</button>
+
+</form>
